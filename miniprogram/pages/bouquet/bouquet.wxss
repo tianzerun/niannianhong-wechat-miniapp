@@ -1,0 +1,79 @@
+/* miniprogram/pages/bouquet/bouquet.wxss */
+.fiter-wrapper {
+  padding: 40rpx 40rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.filter-description {
+  margin-top: 10px;
+  font-size: 14px;
+  width: 260rpx;
+  font-weight: bold;
+}
+
+.filter-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.filter-tag {
+  padding: 5px 10px;
+  margin: 5px 5px;
+  font-size: 14px;
+  background-color: #e4e4e4;
+  border-radius: 5px;
+  color: #000000;
+}
+
+.product-list {
+  width: 100%;
+}
+
+.clip-circle {
+  width: 40%;
+  clip-path: circle(120rpx at center);
+}
+
+.product-glance {
+  display: flex;
+  flex-direction: row;
+  height: 300rpx;
+}
+
+.product-glance image {
+  height: 100%;
+}
+
+.product-showcase {
+  background-color: #e4e4e4;
+}
+
+.product-short-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 50rpx 30rpx;
+}
+
+.product-showcase .title {
+  font-size: 40rpx;
+  line-height: 56rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.product-showcase .subtitle {
+  font-size: 30rpx;
+  line-height: 42rpx;
+  color: #666666;
+}
+
+.section-divider {
+  height: 100rpx;
+}

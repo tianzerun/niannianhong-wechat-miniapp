@@ -1,0 +1,8 @@
+<!--card/card.wxml-->
+<view class="card">
+  <image class="bg-image" src="{{bgImagePath}}" mode="aspectFill"></image>
+  <text class="top-left tag">{{tag}}</text>
+  <view class="card-title-wrapper">
+    <text class="title">{{title}}</text>
+  </view>
+</view>

@@ -1,0 +1,27 @@
+<!--miniprogram/pages/landing.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="logo-wrapper">
+      <image class="logo-img" src="../../images/logo.png" mode="aspectFit"></image>
+      <text class="slogan">与爱相伴20年</text>
+    </view> 
+    <view class="today-date">
+      <text class="date">6月21日</text>
+      <text class="chinese-date">农历五月初一</text>
+      <text class="special-holiday">父亲节</text>
+    </view>
+  </view>
+  <view class="navigation">
+    <view wx:for="{{navigationItems}}" wx:key="label">
+      <view id="{{item.label}}" class="nav-item" bindtap="onTapNavigationIcon">
+        <image class="nav-icon" src="{{item.iconPath}}" mode="aspectFit"></image>
+        <text class="nav-label">{{item.label}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="collage">
+    <text class="collage-section-title">特别活动</text>
+    <card>
+    </card>
+  </view>
+</view>

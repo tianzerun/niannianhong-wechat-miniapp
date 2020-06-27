@@ -1,0 +1,37 @@
+<!--miniprogram/pages/bouquet/bouquet.wxml-->
+<view class="container">
+  <view class="fiter-wrapper">
+    <text class="filter-description">花束送给</text>
+    <view class="filter-tags">
+      <view class="filter-tag" wx:for="{{targetReceivers}}" wx:key="receiver">
+        <text>{{item.receiver}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="product-list">
+    <view wx:for="{{products}}" wx:key="id">
+      <swiper class="product-showcase" indicator-dots="true">
+        <swiper-item>
+          <view class="product-glance">
+            <image class="clip-circle" src="{{item.imageUrl}}" mode="aspectFit"></image>
+            <view class="product-short-description">
+              <text class="title">{{item.name}}</text>
+              <text class="subtitle">寓意</text>
+              <text>{{item.meaning}}</text>
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view>
+            <text class="subtitle">搭配</text>
+            <view wx:for="{{item.components}}" wx:key="flowerName">
+              <text>{{item.flowerName}}</text>
+              <text>{{item.quantity}}</text>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+      <view class="section-divider"></view>
+    </view>
+  </view>
+</view>
