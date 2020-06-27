@@ -13,7 +13,7 @@
   </view>
   <view class="navigation">
     <view wx:for="{{navigationItems}}" wx:key="label">
-      <view id="{{item.label}}" class="nav-item" bindtap="onTapNavigationIcon">
+      <view id="{{item.label}}" class="nav-item" hover-class="nav-hovered" bindtap="onTapNavigationIcon">
         <image class="nav-icon" src="{{item.iconPath}}" mode="aspectFit"></image>
         <text class="nav-label">{{item.label}}</text>
       </view>

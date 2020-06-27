@@ -59,8 +59,14 @@
   border-radius: 20rpx;
 }
 
+.nav-hovered {
+  background-color: #dddddd;
+  border-radius: 10%;
+}
+
 .nav-item {
-  margin: 20rpx;
+  margin: 10rpx 10rpx;
+  padding: 10rpx 10rpx;
   display: flex;
   flex-direction: column;
   align-items: center;

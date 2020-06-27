@@ -10,7 +10,7 @@
   </view>
   <view class="product-list">
     <view wx:for="{{products}}" wx:key="id">
-      <swiper class="product-showcase" indicator-dots="true">
+      <swiper class="product-showcase" indicator-dots="true" previous-margin="30rpx" next-margin="30rpx">
         <swiper-item>
           <view class="product-glance">
             <image class="clip-circle" src="{{item.imageUrl}}" mode="aspectFit"></image>
@@ -22,7 +22,7 @@
           </view>
         </swiper-item>
         <swiper-item>
-          <view>
+          <view class="product-glance">
             <text class="subtitle">搭配</text>
             <view wx:for="{{item.components}}" wx:key="flowerName">
               <text>{{item.flowerName}}</text>

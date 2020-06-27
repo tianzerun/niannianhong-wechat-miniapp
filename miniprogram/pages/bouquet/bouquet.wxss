@@ -36,22 +36,22 @@
 }
 
 .clip-circle {
-  width: 40%;
   clip-path: circle(120rpx at center);
 }
 
 .product-glance {
+  margin: 0 10rpx;
+  background-color: #e4e4e4;
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   height: 300rpx;
 }
 
 .product-glance image {
-  height: 100%;
-}
-
-.product-showcase {
-  background-color: #e4e4e4;
+  width: 250rpx;
+  height: 250rpx;
+  padding: 25rpx;
 }
 
 .product-short-description {
@@ -59,6 +59,10 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: 50rpx 30rpx;
+}
+
+.product-showcase {
+  width: 100vw;
 }
 
 .product-showcase .title {
