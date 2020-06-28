@@ -1,6 +1,9 @@
 // miniprogram/pages/bouquet/bouquet.js
 const targetReceivers = [
   {
+    receiver: "不限"
+  },
+  {
     receiver: "妈妈"
   },
   {
@@ -14,9 +17,6 @@ const targetReceivers = [
   },
   {
     receiver: "长辈"
-  },
-  {
-    receiver: "朋友"
   },
   {
     receiver: "老师"

@@ -12,7 +12,7 @@
     <view wx:for="{{products}}" wx:key="id">
       <swiper class="product-showcase" indicator-dots="true" previous-margin="30rpx" next-margin="30rpx">
         <swiper-item>
-          <view class="product-glance">
+          <view class="product-glance flex-x">
             <image class="clip-circle" src="{{item.imageUrl}}" mode="aspectFit"></image>
             <view class="product-short-description">
               <text class="title">{{item.name}}</text>

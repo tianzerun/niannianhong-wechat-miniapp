@@ -1,4 +1,9 @@
 /* miniprogram/pages/bouquet/bouquet.wxss */
+.flex-x {
+  display: flex;
+  flex-direction: row;
+}
+
 .fiter-wrapper {
   padding: 40rpx 40rpx;
   display: flex;
@@ -33,6 +38,7 @@
 
 .product-list {
   width: 100%;
+  padding-top: 50rpx;
 }
 
 .clip-circle {
@@ -43,8 +49,6 @@
   margin: 0 10rpx;
   background-color: #e4e4e4;
   border-radius: 10px;
-  display: flex;
-  flex-direction: row;
   height: 300rpx;
 }
 
