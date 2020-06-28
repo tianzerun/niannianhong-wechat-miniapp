@@ -6,14 +6,15 @@
       <text class="slogan">与爱相伴20年</text>
     </view> 
     <view class="today-date">
-      <text class="date">6月21日</text>
-      <text class="chinese-date">农历五月初一</text>
-      <text class="special-holiday">父亲节</text>
+      <text class="date">{{solarDate.month}}月{{solarDate.date}}日</text>
+      <text class="chinese-date">农历{{lunarDate.text}}</text>
+      <text class="special-holiday" wx:if="{{holiday}}">{{holiday}}</text>
+      <text class="special-holiday" wx:if="{{!holiday}}">星期{{solarDate.day}}</text>
     </view>
   </view>
   <view class="navigation">
     <view wx:for="{{navigationItems}}" wx:key="label">
-      <view id="{{item.label}}" class="nav-item" hover-class="nav-hovered" bindtap="onTapNavigationIcon">
+      <view data-nav-label="{{item.label}}" class="nav-item" hover-class="nav-hovered" bindtap="onTapNavigationIcon">
         <image class="nav-icon" src="{{item.iconPath}}" mode="aspectFit"></image>
         <text class="nav-label">{{item.label}}</text>
       </view>

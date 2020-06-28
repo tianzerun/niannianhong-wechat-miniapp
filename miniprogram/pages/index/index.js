@@ -1,4 +1,5 @@
 // miniprogram/pages/landing.js
+import { solar2lunar } from 'solarlunar';
 
 const navigationItems = [
   {
@@ -25,6 +26,7 @@ const navigationItems = [
 
 const labelToPagePathMap = navigationItems.reduce((o, cur) => ({...o, [cur.label]: cur.linkedPage}), {});
 
+
 Page({
 
   /**
@@ -38,7 +40,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setTodayDate();
   },
 
   /**
@@ -56,9 +58,27 @@ Page({
   },
 
   onTapNavigationIcon: function(elm) {
-    const iconClicked = elm.currentTarget.id;
+    const iconClicked = elm.currentTarget.dataset.navLabel;
     wx.navigateTo({
       url: labelToPagePathMap[iconClicked],
     })
-  }
+  },
+
+  setTodayDate: function() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1;
+  const date = today.getDate();
+  const day = "日一二三四五六".substring(today.getDay(), today.getDay()+1);
+  const lunar = solar2lunar(year, month, date);
+  this.setData({
+    solarDate: {year, month, date, day},
+    lunarDate: {
+      text: lunar.monthCn + lunar.dayCn
+    },
+    holiday: ""
+  });
+},
 })
+
+
