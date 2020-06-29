@@ -48,7 +48,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.queryDefaultProducts();
+    this.queryProducts();
   },
 
   /**
@@ -114,6 +114,30 @@ Page({
     })
   },
 
+  queryProducts: function(filter) {
+    wx.showLoading({
+      title: '正在匹配花束...',
+    })
+    const db = wx.cloud.database();
+    let queryFilter = {};
+    if (filter && filter["receiver"] !== "不限") {
+      queryFilter["targetReceivers"] = filter["receiver"]
+    }
+    db.collection('bouquets').where(queryFilter).get({
+      success: (res) => {
+        this.setData({products: res.data});
+      },
+      fail: (err) => {
+        wx.showToast({
+          title: '加载失败',
+        })
+      },
+      complete: (err) => {
+        wx.hideLoading();
+      }
+    })
+  },
+
   onTapTargetReceiver: function(event) {
     const { filterTag } = event.currentTarget.dataset;
     const newTargetReceivers = this.data.targetReceivers.map((item)=> {
@@ -121,7 +145,7 @@ Page({
       newItem.isTapped = newItem.receiver === filterTag
       return newItem
     })
-
+    this.queryProducts({receiver: filterTag});
     this.setData({
       targetReceivers: newTargetReceivers
     });
