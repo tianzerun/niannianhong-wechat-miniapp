@@ -3,7 +3,7 @@
   <view class="header">
     <view class="logo-wrapper">
       <image class="logo-img" src="../../images/logo.png" mode="aspectFit"></image>
-      <text class="slogan">与爱相伴20年</text>
+      <text class="slogan">与爱相伴{{companyAge}}年</text>
     </view> 
     <view class="today-date">
       <text class="date">{{solarDate.month}}月{{solarDate.date}}日</text>

@@ -26,6 +26,7 @@ const navigationItems = [
 
 const labelToPagePathMap = navigationItems.reduce((o, cur) => ({...o, [cur.label]: cur.linkedPage}), {});
 
+const companyFounded = 2000;
 
 Page({
 
@@ -34,6 +35,7 @@ Page({
    */
   data: {
     navigationItems,
+    companyAge: new Date().getFullYear() - companyFounded
   },
 
   /**

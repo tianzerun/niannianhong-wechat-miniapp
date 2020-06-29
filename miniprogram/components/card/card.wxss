@@ -2,7 +2,7 @@
 .card {
   width: 100%;
   height: 400px;
-  margin: 25rpx auto 25rpx auto;
+  margin: 0 auto;
   position: relative;
   border-radius: 20px;
   background-color: #c9c9c9;

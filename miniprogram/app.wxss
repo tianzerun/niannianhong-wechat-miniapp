@@ -12,3 +12,20 @@ page {
   flex-direction: column;
   justify-content: flex-start;
 }
+
+.collage {
+  width: 100vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.collage-section-title {
+  margin: 0 auto;
+  width: 94vw;
+  font-size: 60rpx;
+  line-height: 84rpx;
+  color: #3a3a3a;
+  margin-bottom: 20rpx;
+}

@@ -1,0 +1,78 @@
+/* components/productGlance/product-glance.wxss */
+.product-wrapper {
+  width: 94vw;
+  margin: 0 auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 20rpx;
+}
+
+.flex-x {
+  display: flex;
+  flex-direction: row;
+}
+
+.clip-circle {
+  clip-path: circle(120rpx at center);
+}
+
+.product-glance {
+  margin: 40rpx 10rpx 10rpx 10rpx;
+  background-color: #ececec;
+  border-radius: 10px;
+  height: 360rpx;
+}
+
+.product-glance image {
+  width: 250rpx;
+  height: 250rpx;
+  padding: 25rpx;
+}
+
+.product-short-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 50rpx 30rpx;
+}
+
+.product-swiper {
+  width: 100%;
+  height: 400rpx;
+}
+
+.product-swiper .title {
+  font-size: 40rpx;
+  line-height: 56rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.product-swiper .subtitle {
+  font-size: 30rpx;
+  line-height: 42rpx;
+  color: #666666;
+}
+
+.product-sale-wrapper {
+  margin: 30rpx 40rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-button {
+  border-radius: 5px;
+  background-color: #ececec;
+  padding: 5px 20px;
+  color: #1897ff;
+}
+
+.soldCounter {
+  color: #808080;
+  font-size: 30rpx;
+  line-height: 42rpx;
+}

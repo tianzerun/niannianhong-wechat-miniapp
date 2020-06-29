@@ -1,71 +1,36 @@
 // miniprogram/pages/bouquet/bouquet.js
 const targetReceivers = [
   {
-    receiver: "不限"
+    receiver: "不限",
+    isTapped: true,
   },
   {
-    receiver: "妈妈"
+    receiver: "妈妈",
+    isTapped: false,
   },
   {
-    receiver: "爸爸"
+    receiver: "爸爸",
+    isTapped: false,
   },
   {
-    receiver: "女友"
+    receiver: "女友",
+    isTapped: false,
   },
   {
-    receiver: "男友"
+    receiver: "男友",
+    isTapped: false,
   },
   {
-    receiver: "长辈"
+    receiver: "长辈",
+    isTapped: false,
   },
   {
-    receiver: "老师"
+    receiver: "老师",
+    isTapped: false,
   },
   {
-    receiver: "嘉宾"
-  },
-];
-
-const defaultProducts = [
-  {
-    "id": 1,
-    "name": "订婚花束",
-    "meaning": "xxxxxx",
-    "imageUrl": "../../images/bouquet_square.png",
-    "components": [
-      {
-        "flowerName": "红玫瑰",
-        "quantity": 66
-      },
-    ]
-  },
-  {
-    "id": 2,
-    "name": "xxx花束",
-    "meaning": "xxxxxx",
-    "imageUrl": "../../images/bouquet_square.png",
-    "components": [
-      {
-        "flowerName": "百合花",
-        "quantity": 3
-      },
-      {
-        "flowerName": "向日葵",
-        "quantity": 1
-      }
-    ],
-  },
-  {
-    "id": 3,
-    "name": "xxx花束",
-    "meaning": "xxxxxx",
-    "imageUrl": "../../images/bouquet_square.png",
-    "components": [
-      {
-        "flowerName": "粉玫瑰",
-        "quantity": 36
-      }
-    ],
+    receiver: "嘉宾",
+    isTapped: false,
   },
 ];
 
@@ -76,14 +41,14 @@ Page({
    */
   data: {
    targetReceivers,
-   products: defaultProducts,
+   products: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.queryDefaultProducts();
   },
 
   /**
@@ -133,5 +98,32 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  queryDefaultProducts: function() {
+    const db = wx.cloud.database();
+    db.collection('bouquets').get({
+      success: (res) => {
+        this.setData({products: res.data});
+      },
+      fail: (err) => {
+        wx.showToast({
+          title: '加载失败',
+        })
+      }
+    })
+  },
+
+  onTapTargetReceiver: function(event) {
+    const { filterTag } = event.currentTarget.dataset;
+    const newTargetReceivers = this.data.targetReceivers.map((item)=> {
+      const newItem = Object.assign({}, item);
+      newItem.isTapped = newItem.receiver === filterTag
+      return newItem
+    })
+
+    this.setData({
+      targetReceivers: newTargetReceivers
+    });
   }
 })
