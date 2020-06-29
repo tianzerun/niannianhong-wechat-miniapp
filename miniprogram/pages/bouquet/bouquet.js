@@ -100,21 +100,10 @@ Page({
 
   },
 
-  queryDefaultProducts: function() {
-    const db = wx.cloud.database();
-    db.collection('bouquets').get({
-      success: (res) => {
-        this.setData({products: res.data});
-      },
-      fail: (err) => {
-        wx.showToast({
-          title: '加载失败',
-        })
-      }
-    })
-  },
-
   queryProducts: function(filter) {
+    this.setData({
+      products: []
+    });
     wx.showLoading({
       title: '正在匹配花束...',
     })

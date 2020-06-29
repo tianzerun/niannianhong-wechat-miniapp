@@ -22,5 +22,18 @@ Component({
    */
   methods: {
 
-  }
+  },
+
+  lifetimes: {
+    attached: function () { 
+      const receivers = this.properties.product.targetReceivers;
+      let receiverText = '';
+      if (receivers) {
+        receiverText = receivers.join(", ");
+      }
+      this.setData({
+        targetReceivers: receiverText,
+      });
+    },
+  },
 })

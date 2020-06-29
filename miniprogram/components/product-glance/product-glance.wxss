@@ -7,6 +7,7 @@
   flex-direction: column;
   overflow: hidden;
   border-radius: 20rpx;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .flex-x {
@@ -64,6 +65,11 @@
   align-items: center;
 }
 
+.product-details {
+  padding: 5%;
+  width: 40%;
+}
+
 .detail-button {
   border-radius: 5px;
   background-color: #ececec;
@@ -71,7 +77,7 @@
   color: #1897ff;
 }
 
-.soldCounter {
+.secondaryText {
   color: #808080;
   font-size: 30rpx;
   line-height: 42rpx;
