@@ -26,7 +26,7 @@
   height: 360rpx;
 }
 
-.product-glance image {
+.glance-image {
   width: 250rpx;
   height: 250rpx;
   padding: 25rpx;
@@ -72,9 +72,9 @@
 
 .detail-button {
   border-radius: 5px;
-  background-color: #ececec;
+  border: 1px solid #F78200;
   padding: 5px 20px;
-  color: #1897ff;
+  color: #F78200;
 }
 
 .secondaryText {

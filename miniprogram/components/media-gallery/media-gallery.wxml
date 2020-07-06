@@ -1,0 +1,36 @@
+<!--components/media-swiper/media-swiper.wxml-->
+<swiper 
+    class="media-swiper" 
+    indicator-dots="true" 
+    indicator-color="#F7820060"
+    indicator-active-color="#F78200"
+    bindchange="onSwipeGallery"
+  >
+  <swiper-item 
+    class="media-swiper-item" 
+    wx:for="{{content}}"
+    wx:key="fileId"
+  >
+    <video
+      id="video"
+      wx:if="{{item.type=='video'}}"
+      class="media-content" 
+      src="{{item.fileId}}" 
+      object-fit="cover"
+      autoplay="{{true}}"
+      muted="{{true}}"
+      show-mute-btn="{{true}}"
+      show-fullscreen-btn="{{false}}"
+      play-btn-position="center"
+      show-progress="{{false}}"
+      enable-progress-gesture="{{false}}"
+    >
+    </video>
+    <image 
+      wx:elif="{{item.type=='image'}}"
+      class="media-content" 
+      src="{{item.fileId}}" 
+      mode="aspectFill">
+    </image>
+  </swiper-item>
+</swiper>

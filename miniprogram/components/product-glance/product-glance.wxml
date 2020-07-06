@@ -3,7 +3,7 @@
   <swiper class="product-swiper" indicator-dots="true" previous-margin="30rpx" next-margin="30rpx">
     <swiper-item>
       <view class="product-glance flex-x">
-        <image class="clip-circle" src="{{product.imageUrl}}" mode="aspectFit"></image>
+        <image class="glance-image clip-circle" src="{{product.imageUrl}}" mode="aspectFit"></image>
         <view class="product-short-description">
           <text class="title">{{product.name}}</text>
           <text class="subtitle">寓意</text>
@@ -29,6 +29,6 @@
 
   <view class="product-sale-wrapper">
     <text>¥{{product.price}}<text class="secondaryText" space="nbsp"> | {{product.soldCount}}人付款</text></text>
-    <text class="detail-button">详情</text>
+    <text class="detail-button" bindtap="onTapShowDetail">详情</text>
   </view>
 </view>

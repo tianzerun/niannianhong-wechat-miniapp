@@ -26,7 +26,7 @@ const navigationItems = [
 
 const labelToPagePathMap = navigationItems.reduce((o, cur) => ({...o, [cur.label]: cur.linkedPage}), {});
 
-const companyFounded = 2000;
+const companyFounded = 1997;
 
 Page({
 

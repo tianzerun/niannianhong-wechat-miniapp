@@ -6,8 +6,8 @@ Component({
   properties: {
     product: {
       type: Object,
-      value: {}
-    }
+      value: {},
+    },
   },
 
   /**
@@ -21,7 +21,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onTapShowDetail(event) {
+      const { _id, fromCollection } = this.properties.product;
+      wx.navigateTo({
+        url: '../../pages/productDetail/productDetail?' 
+          + `prodId=${_id}`
+          + `&fromCollection=${fromCollection}`,
+      })
+    },
   },
 
   lifetimes: {

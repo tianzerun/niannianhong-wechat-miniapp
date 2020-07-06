@@ -38,7 +38,7 @@
 }
 
 .filter-tag-tapped {
-  background-color: #71bfff;
+  background-color: #F78200;
   color: #f0f0f0;
 }
 

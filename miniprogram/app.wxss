@@ -29,3 +29,23 @@ page {
   color: #3a3a3a;
   margin-bottom: 20rpx;
 }
+
+.yellow-bg {
+  background-color: #ffb900;
+}
+
+.orange-bg {
+  background-color: #F78200;
+}
+
+.red-bg {
+  background-color: #e23838;
+}
+
+.red {
+  color: #e23838;
+}
+
+.sm-unit {
+  font-size: 36rpx;
+}

@@ -1,0 +1,7 @@
+/* components/media-swiper/media-swiper.wxss */
+.media-swiper,
+.media-swiper-item,
+.media-content {
+  width: 100vw;
+  height: 800rpx;
+}

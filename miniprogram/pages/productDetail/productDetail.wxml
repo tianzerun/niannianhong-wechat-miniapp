@@ -1,0 +1,37 @@
+<!--miniprogram/pages/productDetail/productDetail.wxml-->
+<view class="container">
+  <media-gallery content="{{product.gallery}}">
+  </media-gallery>
+
+  <view class="description">
+    <view class="info-section">
+      <view class="price-wrapper">
+        <text class="price-tag red">
+          <text class="sm-unit">¥</text>{{product.price.beforeDot}}<text class="sm-unit">.{{product.price.afterDot}}</text>
+        </text>
+        <text class="favoriate">+收藏</text>
+      </view>
+      <view class="title-wrapper">
+        <text class="title">{{product.name}}</text>
+      </view>
+    </view>
+
+    <view class="info-section">
+      <text>规格</text>
+      <view wx:for="{{product.components}}" wx:key="flowerName">
+        <text>{{item.flowerName}}<text space="nbsp"> | {{item.quantity}}</text></text>
+      </view>
+    </view>
+
+    <view class="info-section">
+      <text>适合</text>
+      <text>{{fitPersons}}</text>
+    </view>
+
+  </view>
+
+  <view class="sticky-bottom">
+    <text class="purchase-btn yellow-bg">到店购买</text>
+    <text class="purchase-btn red-bg">联系购买</text>
+  </view>
+</view>

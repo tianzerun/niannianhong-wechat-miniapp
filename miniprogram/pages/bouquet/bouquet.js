@@ -1,4 +1,6 @@
-// miniprogram/pages/bouquet/bouquet.js
+const { fetchProducts } = require('../../shared/cloudFetch.js');
+
+
 const targetReceivers = [
   {
     receiver: "不限",
@@ -34,6 +36,8 @@ const targetReceivers = [
   },
 ];
 
+const collectionName = "bouquets";
+
 Page({
 
   /**
@@ -48,7 +52,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.queryProducts();
+    this._getProducts();
   },
 
   /**
@@ -100,43 +104,29 @@ Page({
 
   },
 
-  queryProducts: function(filter) {
+  _getProducts: async function(filter) {
     this.setData({
       products: []
     });
     wx.showLoading({
       title: '正在匹配花束...',
     })
-    const db = wx.cloud.database();
-    let queryFilter = {};
-    if (filter && filter["receiver"] !== "不限") {
-      queryFilter["targetReceivers"] = filter["receiver"]
-    }
-    db.collection('bouquets').where(queryFilter).get({
-      success: (res) => {
-        this.setData({products: res.data});
-      },
-      fail: (err) => {
-        wx.showToast({
-          title: '加载失败',
-        })
-      },
-      complete: (err) => {
-        wx.hideLoading();
-      }
-    })
+    const products = await fetchProducts(collectionName, filter);
+    this.setData({products});
+    wx.hideLoading();
   },
 
   onTapTargetReceiver: function(event) {
-    const { filterTag } = event.currentTarget.dataset;
+    let { filterTag } = event.currentTarget.dataset;
+    let filter = (filterTag === "不限") ? {} : {targetReceivers: filterTag};
     const newTargetReceivers = this.data.targetReceivers.map((item)=> {
       const newItem = Object.assign({}, item);
       newItem.isTapped = newItem.receiver === filterTag
       return newItem
     })
-    this.queryProducts({receiver: filterTag});
     this.setData({
       targetReceivers: newTargetReceivers
     });
+    this._getProducts(filter);
   }
 })
