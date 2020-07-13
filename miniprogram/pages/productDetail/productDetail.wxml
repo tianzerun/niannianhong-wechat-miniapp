@@ -31,7 +31,28 @@
   </view>
 
   <view class="sticky-bottom">
-    <text class="purchase-btn yellow-bg">到店购买</text>
+    <text class="purchase-btn yellow-bg" bindtap="onTapInStorePurchase">到店购买</text>
     <text class="purchase-btn red-bg">联系购买</text>
   </view>
+
+  <dialog
+    class="flex-y"
+    show="{{isInStorePurchaseOnShow}}"
+    title="到店购买"
+    buttons="{{inStorePurchaseDialogButtons}}"
+    ext-class="dialog-inner-style"  
+    bindbuttontap="onTapDialogButton"
+  >
+    <view class="dialog-content">
+      <image class="dialog-storefront" src="../../images/storefront.png"></image>
+      <view>
+        <view class="label-bold">地址</view>
+        <view>兴隆南大街96号（德州银行南邻）</view>
+      </view>
+      <view>
+        <view class="label-bold">点击拨打</view>
+        <view><phone number="15615187555" /> 或 <phone number="13969276660" /></view>
+      </view>
+    </view>
+  </dialog>
 </view>

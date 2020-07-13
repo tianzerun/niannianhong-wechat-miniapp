@@ -16,7 +16,7 @@
 }
 
 .clip-circle {
-  clip-path: circle(120rpx at center);
+  clip-path: circle(120rpx at 130rpx 150rpx);
 }
 
 .product-glance {
@@ -28,8 +28,7 @@
 
 .glance-image {
   width: 250rpx;
-  height: 250rpx;
-  padding: 25rpx;
+  min-height: 300rpx;
 }
 
 .product-short-description {
@@ -37,6 +36,8 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: 50rpx 30rpx;
+  width: 50%;
+  overflow-wrap: break-word;
 }
 
 .product-swiper {
@@ -77,8 +78,9 @@
   color: #F78200;
 }
 
-.secondaryText {
+.secondary-text {
   color: #808080;
   font-size: 30rpx;
   line-height: 42rpx;
 }
+

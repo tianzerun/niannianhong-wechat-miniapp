@@ -5,6 +5,7 @@
   "scripts": {},
   "author": "Zerun Tian",
   "dependencies": {
-    "solarlunar": "^2.0.7"
+    "solarlunar": "^2.0.7",
+    "weui-miniprogram": "^1.0.3"
   }
 }

@@ -1,0 +1,2 @@
+<!--components/phone-number/phone-number.wxml-->
+<text class="{{isVisualCueActive ? 'active' : null}}" bindtap="onTapNumber">{{number}}</text>

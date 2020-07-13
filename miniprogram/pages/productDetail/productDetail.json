@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "media-gallery": "../../components/media-gallery/media-gallery"
+    "media-gallery": "../../components/media-gallery/media-gallery",
+    "dialog": "../../miniprogram_npm/weui-miniprogram/dialog/dialog",
+    "phone": "../../components/phone-number/phone-number"
   }
 }

@@ -111,7 +111,8 @@ Page({
     wx.showLoading({
       title: '正在匹配花束...',
     })
-    const products = await fetchProducts(collectionName, filter);
+    let products = await fetchProducts(collectionName, filter);
+    if (products == null) products = []; 
     this.setData({products});
     wx.hideLoading();
   },

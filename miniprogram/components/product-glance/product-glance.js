@@ -14,7 +14,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    isPartialComponetsOnHide: false,
   },
 
   /**
@@ -29,6 +29,16 @@ Component({
           + `&fromCollection=${fromCollection}`,
       })
     },
+
+    showPartialComponents: function() {
+      let { components } = this.properties.product;
+      if (components.length > 3) {
+        this.setData({
+          isPartialComponetsOnHide: true,
+          'product.components': components.slice(0, 3)
+        })
+      }
+    },
   },
 
   lifetimes: {
@@ -41,6 +51,7 @@ Component({
       this.setData({
         targetReceivers: receiverText,
       });
+      this.showPartialComponents();
     },
   },
 })

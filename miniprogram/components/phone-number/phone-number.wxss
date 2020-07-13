@@ -1,0 +1,5 @@
+/* components/phone-number/phone-number.wxss */
+
+.active {
+  color: #5eb6fd;
+}
