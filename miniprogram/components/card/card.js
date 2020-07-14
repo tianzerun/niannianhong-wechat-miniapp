@@ -1,4 +1,4 @@
-const { fetchOneProduct } = require('../../shared/cloudFetch.js');
+const { fetchOneProduct } = require('../../services/cloudFetch.js');
 const productId = 'rMNMMYAIsoXHxEUHSNraGtDkyPlwGRpgqVDRAsoXvc4E8Yom';
 
 Component({

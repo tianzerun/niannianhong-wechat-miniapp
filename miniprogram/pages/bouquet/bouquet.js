@@ -1,4 +1,4 @@
-const { fetchProducts } = require('../../shared/cloudFetch.js');
+const { fetchProducts } = require('../../services/cloudFetch.js');
 
 
 const targetReceivers = [

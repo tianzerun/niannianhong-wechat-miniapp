@@ -1,6 +1,6 @@
 const bmap = require('../../libs/bmap-wx.min.js');
 
-const { fetchOneProduct } = require('../../shared/cloudFetch.js');
+const { fetchOneProduct } = require('../../services/cloudFetch.js');
 
 const STORE_NAME = "年年红鲜花坊";
 const BACK_TO_PRODUCT = "返回商品";
