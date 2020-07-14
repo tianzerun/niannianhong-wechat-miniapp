@@ -17,8 +17,6 @@
       class="media-content" 
       src="{{item.fileId}}" 
       object-fit="cover"
-      autoplay="{{true}}"
-      muted="{{true}}"
       show-mute-btn="{{true}}"
       show-fullscreen-btn="{{false}}"
       play-btn-position="center"

@@ -31,8 +31,8 @@
   </view>
 
   <view class="sticky-bottom">
-    <text class="purchase-btn yellow-bg" bindtap="onTapInStorePurchase">到店购买</text>
-    <text class="purchase-btn red-bg">联系购买</text>
+    <button size="mini" class="purchase-btn yellow-bg" bindtap="onTapInStorePurchase">到店购买</button>
+    <button size="mini" open-type="contact" class="purchase-btn red-bg">联系购买</button>
   </view>
 
   <dialog

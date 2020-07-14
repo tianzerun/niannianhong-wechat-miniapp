@@ -1,4 +1,6 @@
-// card/card.js
+const { fetchOneProduct } = require('../../shared/cloudFetch.js');
+const productId = 'rMNMMYAIsoXHxEUHSNraGtDkyPlwGRpgqVDRAsoXvc4E8Yom';
+
 Component({
   /**
    * 组件的属性列表
@@ -8,13 +10,9 @@ Component({
       type: String,
       value: "鲜花束"
     },
-    bgImagePath: {
-      type: String,
-      value: "../../images/bouquet.png"
-    },
     title: {
       type: String,
-      value: "父亲节定制花束"
+      value: "生日定制花束"
     }
   },
 
@@ -25,10 +23,24 @@ Component({
 
   },
 
+  lifetimes: {
+    attached: async function() {
+      const product = await fetchOneProduct('bouquets', productId);
+      this.setData({
+        product
+      })
+    }
+  },
+
   /**
    * 组件的方法列表
    */
   methods: {
-
+    onTapCard: function() {
+      wx.navigateTo({
+        url: '../../pages/productDetail/productDetail?' 
+          + `prodId=${productId}&fromCollection=bouquets`
+      })
+    },
   }
 })

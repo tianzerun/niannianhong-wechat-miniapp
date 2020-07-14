@@ -65,10 +65,17 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 1,
 					"name": "pages/productDetail/productDetail",
 					"pathName": "pages/productDetail/productDetail",
-					"query": "fromCollection=bouquets&prodId=62cc218f5ef936ce00002b3b2311459e",
+					"query": "fromCollection=bouquets&prodId=0Cxagnx4tdRraM4glHlghK3fPZbxwGhW5XKWuLuPYNoCBn1C",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "fromCollection=bouquets&prodId=0Cxagnx4tdRraM4glHlghK3fPZbxwGhW5XKWuLuPYNoCBn1C",
 					"scene": null
 				}
 			]

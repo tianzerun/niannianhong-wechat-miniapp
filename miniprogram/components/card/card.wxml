@@ -1,8 +1,8 @@
 <!--card/card.wxml-->
-<view class="card">
-  <image class="bg-image" src="{{bgImagePath}}" mode="aspectFill"></image>
+<view class="card" bindtap="onTapCard">
+  <image class="bg-image" src="{{product.imageUrl}}" mode="aspectFill"></image>
   <text class="top-left tag">{{tag}}</text>
   <view class="card-title-wrapper">
-    <text class="title">{{title}}</text>
+    <text class="title">{{product.name}}</text>
   </view>
 </view>
